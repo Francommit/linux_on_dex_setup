@@ -7,4 +7,5 @@ sudo apt -y install git && git clone https://github.com/Francommit/linux_on_dex_
 ```
 
 Arc-Manjaro theme from here - https://www.xfce-look.org/p/1234992/
+
 Papirus Icons from here - https://www.xfce-look.org/p/1166289/
