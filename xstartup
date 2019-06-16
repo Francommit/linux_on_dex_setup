@@ -1,0 +1,60 @@
+#!/bin/sh
+# vim: expandtab:tabstop=4:softtabstop=4:shiftwidth=4:autoindent:cindent
+
+export XKL_XMODMAP_DISABLE=1
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+LOGTAG="xstartup"
+
+#============================================================================
+# Helper Fucitons
+#============================================================================
+
+ei () { printf "[INF] $LOGTAG: $1\n";:;}  #ei=emit inf msg
+ew () { printf "[WRN] $LOGTAG: $1\n";:;}  #ew=emit wrn msg
+ee () { printf "[ERR] $LOGTAG: $1\n";:;}  #ee=emit err msg
+
+
+lxd_set_configuration()
+{
+local RESOLUTION="$(xdpyinfo | awk '/dimensions/{printf $2}')"
+local FHD="1920x1080"
+local WQHD="2560x1600"
+
+ei "$RESOLUTION - $FHD - $WQHD"
+# workaround for the absense of logind - fix login by reboot, disable scrn lock
+gsettings set org.gnome.desktop.screensaver logout-enabled          false || ee "1 failed!"
+gsettings set org.gnome.desktop.screensaver lock-enabled            false || ee "2 failed!"
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false || ee "3 failed!"
+
+gsettings set org.gnome.desktop.interface clock-show-date true            || ee "4 failed!"
+gsettings set org.gnome.desktop.interface clock-show-seconds true         || ee "5 failed!"
+
+# tooltip showing disabled. With this setting, left top corner's flickering problem can be fixed.
+gsettings set org.gnome.gnome-panel.general enable-tooltips false         || ee "6 failed!"
+}
+
+lxd_set_configuration
+sleep .5
+
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+
+#gnome-settings-daemon &
+#sleep .5
+
+#gnome-panel &
+sleep .5
+
+#metacity &
+#sleep .5
+
+# key bind daemon start
+if [ -e /usr/bin/xbindkeys ]; then
+	xbindkeys -f ~/.xbindkeysrc &
+fi
+
+nautilus &
+gnome-terminal &
+startxfce4 &
