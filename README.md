@@ -1,5 +1,10 @@
 # linux_on_dex_setup
-A script to configure the Linux on Dex 16.04 container
+A script to configure the Linux on Dex Ubuntu 16.04 container
+
+## Run your terminal in root (the root password is "secret", no quotes):
+```
+sudo su
+```
 
 ## Copy and paste this in your Terminal:
 ```
