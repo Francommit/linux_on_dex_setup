@@ -1,9 +1,10 @@
 
 # Upgrade existing packages
-sudo apt-get -y update && sudo apt-get -y upgrade 
+# sudo apt-get -y update && sudo apt-get -y upgrade 
 
 # Install xfce4 desktop environment
-sudo apt-get install -y xfce4 xfconf p7zip-full
+sudo apt-get install -y xfce4 p7zip-full
+# xfconf 
 
 # Move thene files Arc-Manjaro theme
 unzip Arc-Manjaro.zip -d /usr/share/themes/
