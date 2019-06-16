@@ -7,7 +7,8 @@ sudo apt-get install -y xfce4 xfconf p7zip-full
 
 # Move thene files Arc-Manjaro theme
 unzip Arc-Manjaro.zip -d /usr/share/themes/
-
+7z x papirus-icon-theme-20190615.tar.x
+sudo 7z x papirus-icon-theme-20190615.tar -o./usr/share/icons/
  
 # TO-DO: Download Papirus icons
 # wget https://www.xfce-look.org/p/1166289/startdownload?file_id=1560595896&file_name=papirus-icon-theme-20190615.tar.xz&file_type=application/x-xz&file_size=11454460
