@@ -12,6 +12,9 @@ unzip Arc-Manjaro.zip -d /usr/share/themes/
 sudo 7z x papirus-icon-theme-20190615.tar -o/usr/share/icons/
 
 # Edit the .vnc/xstartup file
+# sudo sed -i 's/gnome-settings-daemon &/# gnome-settings-daemon &/g' /home/dextop/.vnc/xstartup
+# sudo sed -i 's/gnome-panel &/# gnome-panel &/g' /home/dextop/.vnc/xstartup
+# sudo sed -i 's/metacity &/metacity &/g' /home/dextop/.vnc/xstartup
 # sudo mv xstartup /home/dextop/.vnc/
 
 # TO-DO: Set manjaro theme with xfconf
