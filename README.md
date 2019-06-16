@@ -1,5 +1,6 @@
-# linux_on_dex_setup
-A script to configure the Linux on Dex Ubuntu 16.04 container
+# Linux on Dex setup - Ubuntu 16.04
+A script to automatically configure the Linux on Dex Ubuntu 16.04 container.
+The Samsung out of the box experience isn't the most updated, so I thought I'd try to re-create it in a rerunnable way.
 
 ## Run your terminal in root (the root password is "secret", no quotes):
 ```
