@@ -8,8 +8,10 @@ sudo apt-get install -y xfce4 p7zip-full
 
 # Move thene files Arc-Manjaro theme
 unzip Arc-Manjaro.zip -d /usr/share/themes/
-7z x papirus-icon-theme-20190615.tar.xz
-sudo 7z x papirus-icon-theme-20190615.tar -o/usr/share/icons/
+mkdir ~/.local/share/themes/
+#mkdir ~/.local/share/icons/
+#7z x papirus-icon-theme-20190615.tar.xz
+#sudo 7z x papirus-icon-theme-20190615.tar -o~/.local/share/icons/
 
 # Edit the .vnc/xstartup file
 sudo sed -i 's/gnome-settings-daemon &/# gnome-settings-daemon &/g' /home/dextop/.vnc/xstartup
